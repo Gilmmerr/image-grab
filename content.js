@@ -179,7 +179,8 @@
       const h = img.naturalHeight || rect.height;
       add(img.currentSrc, w, h);
       add(img.getAttribute('src'), w, h);
-      ['data-src', 'data-lazy-src', 'data-ks-lazyload', 'data-original', 'data-lazy', 'data-url', 'data-img'].forEach((attr) => {
+      ['data-src', 'data-lazy-src', 'data-lazy-img', 'data-actualsrc', 'data-img-src',
+        'data-ks-lazyload', 'data-original', 'data-real-src', 'data-lazy', 'data-url', 'data-img'].forEach((attr) => {
         add(img.getAttribute(attr), w, h);
       });
       add(pickFromSrcset(img.getAttribute('srcset')), w, h);
