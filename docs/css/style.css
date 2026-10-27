@@ -244,8 +244,8 @@ code {
 
 .hero h1 {
   margin: 18px 0 16px;
-  font-size: clamp(28px, 4.2vw, 46px);
-  line-height: 1.26;
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.28;
   letter-spacing: -.8px;
   font-weight: 800;
 }
@@ -271,7 +271,12 @@ code {
 .hero__stats span { font-size: 12.5px; color: var(--ink-3); }
 
 /* Hero 右侧示意图 */
-.hero__visual { position: relative; }
+.hero__visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .mock {
   background: #fff;
   border: 1px solid var(--line);
@@ -280,11 +285,8 @@ code {
   overflow: hidden;
 }
 .mock--gallery {
-  position: absolute;
-  right: -6px;
-  bottom: -46px;
-  width: 74%;
-  box-shadow: 0 22px 56px rgba(15, 23, 42, .18);
+  width: 100%;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, .13);
   animation: float 6s ease-in-out infinite;
 }
 .mock__bar {
@@ -314,11 +316,11 @@ code {
   text-overflow: ellipsis;
 }
 
-.mock__body { position: relative; padding: 16px; }
+.mock__body { position: relative; padding: 16px 16px 48px; }
 .mock__product { display: flex; gap: 14px; }
 .mock__thumb {
-  width: 96px;
-  height: 96px;
+  width: 92px;
+  height: 92px;
   flex: 0 0 auto;
   border-radius: 12px;
   background: linear-gradient(135deg, #dbeafe, #ede9fe);
@@ -330,6 +332,15 @@ code {
   border-radius: 5px;
   background: #eef2f8;
   margin-bottom: 9px;
+}
+
+.mock__strip { display: flex; gap: 8px; margin-top: 12px; }
+.mock__strip span {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  border: 1px solid #eef1f7;
 }
 
 .mock__fab {
@@ -349,7 +360,7 @@ code {
 
 .mock__gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   padding: 12px;
 }
@@ -607,9 +618,9 @@ code {
 /* ---------------- 响应式 ---------------- */
 @media (max-width: 1023px) {
   .hero { padding: 56px 0 72px; }
-  .hero__inner { grid-template-columns: 1fr; gap: 44px; }
+  .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero__visual { max-width: 520px; }
-  .mock--gallery { position: static; width: 100%; margin-top: 18px; animation: none; }
+  .mock--gallery { animation: none; }
   .intro__grid { grid-template-columns: repeat(2, 1fr); }
   .features { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 76px 0; }
