@@ -1,0 +1,56 @@
+/* ===== 图提取：页面内悬浮按钮样式 ===== */
+#ig-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 108px;
+  z-index: 2147483000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  height: 44px;
+  border: 0;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #2563eb 0%, #6d28d9 100%);
+  color: #fff;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .5px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, .38);
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+#ig-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(37, 99, 235, .48);
+}
+#ig-fab:active { transform: translateY(0) scale(.98); }
+#ig-fab[disabled] { opacity: .72; cursor: progress; }
+#ig-fab .ig-fab__icon { font-size: 15px; line-height: 1; }
+
+/* ===== 提示气泡 ===== */
+#ig-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 164px;
+  z-index: 2147483000;
+  max-width: 280px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(17, 24, 39, .92);
+  color: #fff;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+#ig-toast.is-show { opacity: 1; transform: translateY(0); }
+#ig-toast.is-error { background: rgba(185, 28, 28, .94); }

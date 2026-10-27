@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片预览 · 图提取</title>
+<link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__left">
+    <div class="brand">
+      <span class="brand__logo">🖼</span>
+      <span class="brand__name">图提取</span>
+    </div>
+    <div class="meta" id="meta">正在读取图片…</div>
+  </div>
+
+  <div class="topbar__right">
+    <div class="seg">
+      <button type="button" class="btn btn--ghost" id="btnAll">全选</button>
+      <button type="button" class="btn btn--ghost" id="btnInvert">反选</button>
+      <button type="button" class="btn btn--ghost" id="btnClear">清空选择</button>
+    </div>
+    <div class="counter">已选 <b id="selCount">0</b> / <span id="totalCount">0</span> 张</div>
+    <button type="button" class="btn btn--primary" id="btnDownload" disabled>下载选中</button>
+  </div>
+</header>
+
+<div class="progressbar" id="progressWrap" hidden>
+  <div class="progressbar__fill" id="progressFill"></div>
+  <span class="progressbar__text" id="progressText">准备中…</span>
+</div>
+
+<main class="grid" id="grid"></main>
+
+<div class="empty" id="empty" hidden>
+  <div class="empty__icon">🗂</div>
+  <h2>还没有提取到图片</h2>
+  <p>回到商品详情页，点击右下角的「获取图片」按钮即可。</p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="gallery.js"></script>
+</body>
+</html>
